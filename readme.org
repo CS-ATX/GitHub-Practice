@@ -1,0 +1,103 @@
+#+title: Getting Started
+
+* Contents :toc:
+- [[#faq][FAQ]]
+- [[#some-additional-commands][Some Additional Commands]]
+- [[#basic-workflows][Basic Workflows]]
+- [[#basic-terminology][Basic Terminology]]
+
+* FAQ
+
+SSH or HTTP?
+- Set up SSH, HTTP will be combersome for anything other than cloning repos.
+- Setting it up might seem complicated if you've never used before, but there are 100s of really good tutorials to demo.
+
+What do I write in the commit messages?
+- Try to keep it short (like a title)
+- Standard practice is to write them in future-tense
+  + eg. instead of "Fixed the typo in function X" write "Fix typo in function X".
+- If you are going to be more verbose with description (which is a good thing), don't do so on the heading line.
+
+How often do I make commits?
+- Depends. Any substantial change for sure.
+- Anything that you could say: "I just did X" for.
+
+* Some Additional Commands
+
+- =git status= will show a bunch of info about the status of your repo.
+- =git remote= will list the remotes attached to this repo.
+- =git branch= will list the branches attached to this repo.
+
+* Basic Workflows
+
+Starting with a brand new project:
+1. Initialize the project.
+   - =git init=
+2. Create/remove/change some files.
+3. Add the changes to the staging area.
+   - =git add <filename(s)>=
+4. Start tracking the files.
+   - =git commit -m "some message describing your changes"=
+5. Repeat, or see "Working with a Remote"
+
+Starting with an existing project:
+1. Clone the project
+   - =git clone <url-to-project>=
+2. Create/remove/change some files.
+3. Add the changes to the staging area.
+   - =git add <filename(s)>=
+4. Start tracking the files.
+   - =git commit -m "some message describing your changes"=
+5. Repeat, or see "Working with a Remote"
+
+Adding a remote to a project:
+1. If you've cloned the project, you shouldn't have to do this.
+2. =git remote add origin <url-of-remote>=
+   - The remotes *name* is "origin" now on your computer.
+   - It can be anything, this is just standard.
+
+Working with a Remote (that you own, or have direct access to):
+1. See "Starting with an existing project".
+2. Push your changes to the remote
+   - =git push -u origin master=
+   - =-u= says: set this as /upsteam/, ie. the default remote, so next time you can just type git push.
+   - =origin= is the name of the remote
+   - =master= is the /branch/, this might be =main=.
+
+Working with a Remote (that you don't have direct access to):
+1. Fork the project you want to work with on Github.
+2. See "Working with a Remote (that you own, or have direct access to):
+   - make sure you clone the fork
+3. Submit a pull request on Github.
+
+* Basic Terminology
+
+- Repository:
+  + A directory that is (to be) being version controlled.
+- Init:
+  + Create a new project from a directory.
+- Clone:
+  + Like init, but you'll start with the whole history of the project you've cloned.
+- Stage:
+  + Add files that have been edited/deleted/created to the staging area.
+  + The staging area are files you /intend/ to track, but aren't yet.
+- Commit:
+  + Start tracking changes to the files that were in the staging area
+- Remote:
+  + A copy of a project on some hosting platform (like github).
+- Fork:
+  + Like clone, but for remote repositories.
+- Push:
+  + Send your changes from your local repo to the remote one.
+- Status:
+  + See the status of every file in your local project.
+  + Use this liberally, at first.
+- Pull:
+  + Get the changes from a remote to your local project.
+- Fetch:
+  + Pull changes, but do not integrate them.
+- Pull Request:
+  + Ask to have your changes, from your fork, added to the project you are submitting the PR to.
+- Branch:
+  + Usually, diverging "branches" of project, within the same repo, that share some same history.
+  + You probably won't need to use these for a while.
