@@ -22,6 +22,9 @@ How often do I make commits?
 - Depends. Any substantial change for sure.
 - Anything that you could say: "I just did X" for.
 
+I'm still confused..
+- Send a message on the Discord Server.
+
 * Some Additional Commands
 
 - =git status= will show a bunch of info about the status of your repo.
